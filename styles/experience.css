@@ -1,0 +1,27 @@
+.range-setting {
+  display:flex;
+  align-items:center;
+  gap:.25em;
+}
+
+.range-setting::before {
+  font-size:1.5em;
+  content:attr(data-icon-start);
+}
+
+.range-setting::after {
+  font-size:1.5em;
+  content:attr(data-icon-end);
+}
+
+.range-setting input {
+  flex-grow:1;
+}
+
+
+html[data-setting-readers="0.5"] :is(header, main, footer){ filter:blur(.05em); }
+html[data-setting-readers="1"] :is(header, main, footer){ filter:blur(.10em); }
+html[data-setting-readers="1.5"] :is(header, main, footer){ filter:blur(.15em); }
+html[data-setting-readers="2"] :is(header, main, footer){ filter:blur(.20em); }
+html[data-setting-readers="2.5"] :is(header, main, footer){ filter:blur(.25em); }
+html[data-setting-readers="3"] :is(header, main, footer){ filter:blur(.30em); }

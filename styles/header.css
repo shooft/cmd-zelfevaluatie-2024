@@ -1,0 +1,169 @@
+/**********/
+/* HEADER */
+/**********/
+
+body > header {
+  position: sticky;
+  top:0;
+  z-index:10;
+  
+  grid-column: full;
+  padding:
+    max(1em, var(--gap) / 2)  
+    var(--gap);
+
+  display:flex;
+  align-items:center;
+  gap:.25em;
+}
+
+body > header::before {
+  content:"";
+
+  position: absolute;
+  inset:0;
+  z-index: -1;
+
+  background:var(--bg-header);  
+}
+
+@media (prefers-reduced-transparency:no-preference) {
+  body > header::before {
+    background:var(--bg-header-gradient);
+    -webkit-mask-image:linear-gradient(#000 75%,#0009);
+    mask-image:linear-gradient(#000 75%,#0009);
+    backdrop-filter:
+      blur(.25em) 
+      grayscale(.75);
+  }
+}
+
+/* breathing room */
+@media (width > 23em) {
+  body > header {
+    gap:.5em;
+  }
+}
+
+
+/***************/
+/* NAV → LOGOS */
+/***************/
+body > header nav {
+  display:flex;
+  gap:.5em;
+  align-items:center;
+  margin-right:auto;
+}
+
+.link--logo {
+  display:block;
+  color:var(--clr-root);
+}
+
+/* streepje */
+.nav__dash {
+  width:1px;
+  align-self:stretch;
+  background-color:currentColor;
+}
+
+/* cmd logo */
+.link--cmd {
+  align-self:stretch;
+  
+  display:grid;
+  align-content:center;
+  text-decoration-line:none;
+  line-height:1.2;
+}
+
+.link--cmd:hover {
+  text-decoration-line: underline;
+}
+
+/* hva logo */
+.link--hva svg{
+  height:2em;
+}
+
+.logo--hva-icon {
+  display:block;
+}
+
+.logo--hva-small {
+  display:none;
+}
+
+.logo--hva-wide {
+  display:none;
+}
+
+/* RESPONSIVENESS */
+
+/* no room for CMD */
+@media (width < 20em) {
+  .link--cmd {
+    display:flex;
+    align-items:center;
+  }
+  
+  .link--cmd > span {
+    display:flex;
+  }
+
+  .link__extra-text {
+    position:absolute;
+    left:-9999em;
+  }
+}
+
+/* breathing room */
+@media (width > 23em) {
+  body > header nav {
+    gap:1em;
+  }
+
+  /* hva logo */
+  .link--hva svg {
+    height:2.5em;
+  }
+}
+
+
+/* full size logo */
+@media (width > 52em) {
+  /* hva logo */
+  .logo--hva-icon {
+    display:none;
+  }
+  
+  .logo--hva-small {
+    display:block;
+    visibility:visible;
+  }
+}
+
+/* wide logo */
+@media (width > 76em) {
+  /* streepje */
+  .nav__dash {
+    height:1.25em;
+    align-self:center;
+  }
+
+  /* cmd logo */
+  .link--cmd {
+    display:block;
+  }
+  
+  /* hva logo */
+  .logo--hva-small {
+    display:none;
+  }
+
+  .logo--hva-wide {
+    display:block;
+    visibility:visible;
+  }
+}

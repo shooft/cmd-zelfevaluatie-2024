@@ -1,0 +1,158 @@
+/*********/
+/* ASIDE */
+/*********/
+
+aside {
+  position:fixed;
+  top:0;
+  bottom:0;
+  right:0;
+
+  width:100%;
+  z-index:20;
+
+  padding:
+    0
+    calc(var(--gap) * .5);
+
+  display:grid;
+  grid-template-rows:
+    min-content
+    calc( 100% - var(--size-button-header) - max(2em, var(--gap)) );
+  grid-template-areas:
+    "tablist"
+    "tabpanel";
+
+  background-color:var(--bg-root);
+
+  pointer-events:none;
+  opacity:0;
+  transform:scale(.95, .97);
+
+  transition:0s;
+}
+
+@media (width > 20em) {
+  aside {
+    width:auto;
+    border-left:solid 1px currentcolor;
+  }
+}
+
+aside:not( [data-current="none"] ) {
+  transform:scale(1);
+  pointer-events:all;
+  opacity: 1;
+
+  transition:transform .3s, opacity .3s;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  aside {
+    transform:translateX(100%);
+    opacity:1;
+    transition:transform .25s;
+  }
+
+  aside:not( [data-current="none"] ) {
+    transform:translateX(0%);
+    transition:transform .5s;
+  }
+
+}
+
+
+
+
+/************/
+/* TAB LIST */
+/************/
+
+aside [role="tablist"] {
+  grid-area:tablist;
+  padding:
+    max(1em, var(--gap) / 2)
+    calc(var(--gap) * .5);
+
+  display:flex;
+}
+
+
+/*********/
+/* A TAB */
+/*********/
+
+aside [role="tab"] {
+  flex-grow:1;
+}
+
+aside [role="tab"][aria-selected="true"] {
+  background-color:var(--bg-tab-selected);
+  color:var(--clr-tab-selected);
+}
+
+aside [role="tab"]:first-of-type {
+  border-radius:.25em 0 0 .25em;
+}
+
+aside [role="tab"]:last-of-type {
+  border-radius:0 .25em .25em 0;
+}
+
+aside [role="tab"]:not(:first-of-type, :last-of-type) {
+  border-radius:0;
+  /* border-width:1px 0; */
+  margin:0 -1px;
+}
+
+aside [role="tab"]:focus-visible {
+  z-index:1;
+}
+
+
+/*************/
+/* TAB PANEL */
+/*************/
+
+aside [role="tabpanel"] {
+  grid-area:tabpanel;
+
+  position:relative;
+  flex-grow:1;
+  display:block;
+  margin-bottom:max(1em, var(--gap) * .5);
+}
+
+aside [role="tabpanel"][hidden] {
+  z-index: -1;
+  opacity: 0;
+  pointer-events:none;
+  user-select:none;
+}
+
+aside [role="tabpanel"] .tabpanel__fade {
+  height:100%;
+  overflow-y:auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+
+  mask-image: linear-gradient(
+      transparent, 
+      red calc(var(--gap) * .5) calc(100% - var(--gap) * .5), 
+      transparent
+    );
+}
+
+aside [role="tabpanel"] .tabpanel__fade::-webkit-scrollbar {
+  display: none;
+}
+
+/* panel content */
+aside [role="tabpanel"] .tabpanel__wrapper {
+  padding:
+    max(1em, var(--gap) * .5)
+    calc(var(--gap) * .5);
+
+  display:grid;
+  gap:3em;
+}

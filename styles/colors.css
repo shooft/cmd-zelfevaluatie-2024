@@ -1,0 +1,74 @@
+:root {
+  --light:#fff;
+  --light--t80:#fff9;
+
+  --dark:#504C4D;
+  --dark--t80:#504C4D99;
+
+  --yellow:#FEE502;
+  --orange:#FDDB9E;
+  --pink:#F8A1BB;
+  --green:#BDE4B6;
+  --blue:#C5E3F7;
+  --purple:#DEB8E0;
+  --turquoise:#B9E7DF;
+
+  --yellow--inv:#011BFD;
+  --yellow--br:#FEE502;
+  --orange--br:#F9BC4E;
+  --pink--br:#F35A8E;
+  --green--br:#6CC670;
+  --blue--br:#59B6E9;
+  --purple--br:#B558B3;
+  --turquoise--br:#57C5BE;
+
+  --bg-root:var(--light);
+  --clr-root:var(--dark);
+
+  --clr-link:var(--yellow--inv);
+  --outline-link:var(--yellow--inv);
+
+  --bg-header:var(--light);
+  --bg-header-gradient:linear-gradient(var(--light) 25%, var(--light--t80));
+
+  --bg-button--panel:var(--light);
+  --clr-button--panel:var(--dark);
+  --brdr-button--panel:var(--dark);
+
+  --bg-tab-selected:var(--dark);
+  --clr-tab-selected:var(--light);
+
+  color-scheme:light;
+  accent-color:var(--yellow--inv);
+}
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --yellow:#AE9E3B;
+    --orange:#AD8D55;
+    --pink:#AA6176;
+    --green:#709165;
+    --blue:#5B8BA6;
+    --purple:#8E5884;
+    --turquoise:#669590;
+
+    --bg-root:var(--dark);
+    --clr-root:var(--light);
+
+    --clr-link:var(--yellow--br);
+    --outline-link:var(--yellow--br);
+
+    --bg-header:var(--dark);
+    --bg-header-gradient:linear-gradient(var(--dark) 25%, var(--dark--t80));
+
+    --bg-button--panel:var(--dark);
+    --clr-button--panel:var(--light);
+    --brdr-button--panel:var(--light);
+
+    --bg-tab-selected:var(--light);
+    --clr-tab-selected:var(--dark);
+
+    color-scheme:dark;
+    accent-color:var(--yellow--br);
+  }
+}

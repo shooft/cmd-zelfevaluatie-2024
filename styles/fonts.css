@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'open-sans-var';
+	font-weight:300..800;
+	font-stretch:75..100;
+	font-style: normal;
+  src: 
+    url("../fonts/OpenSans-var.woff2") format('woff2'),
+    url("../fonts/OpenSans-var.ttf") format('truetype');
+	font-display: fallback;
+}
+
+@font-face {
+  font-family: 'open-sans-var';
+	font-weight:300..800;
+	font-stretch:75..100;
+	font-style: italic;
+  src:
+    url("../fonts/OpenSans-Italic-var.woff2") format('woff2'),
+    url("../fonts/OpenSans-Italic-var.ttf") format('truetype');
+	font-display: fallback;
+}

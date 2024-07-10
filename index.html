@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Homepage - CMD Amsterdam - Zelfreclectie 2024</title>
+  <meta name="description" content="CMD Amsterdam - Zelfevaluatierapport voor visitatie in november 2024">
+  <meta name="author" content="CMD Amsterdam">
+  
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="stylesheet" href="styles/colors.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/aside.css">
+  <link rel="stylesheet" href="styles/footer.css">
+
+  <link rel="stylesheet" href="styles/experience.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a class="link--logo link--hva" href="https://www.hva.nl/" aria-label="Hogeschool van Amsterdam">
+        <svg class="logo--hva-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 48">
+          <use xlink:href="images/logo-hva.svg#logo-hva-icon"></use>
+        </svg>
+        <svg visibility="hidden" class="logo--hva-small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 48">
+          <use xlink:href="images/logo-hva.svg#logo-hva-small"></use>
+        </svg>
+        <svg visibility="hidden" class="logo--hva-wide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358 48">
+          <use xlink:href="images/logo-hva.svg#logo-hva-wide"></use>
+        </svg>
+      </a>
+
+      <div class="nav__dash"></div>
+      
+      <a class="link--logo link--cmd" href="https://cmd-amsterdam.nl/" lang="en">
+        <span>C<span class="link__extra-text">ommunication and </span></span><span>M<span class="link__extra-text">ultimedia </span>D<span class="link__extra-text">esign</span></span></a>
+    </nav>
+
+    <a href="#main" class="link--skip visually-hidden">direct naar hoofdinhoud</a>
+
+    <a id="link-menu" href="#menu" class="button--panel" aria-label="toon het menu" data-panel-name="tabpanel-menu">
+      <svg viewBox="0 0 512 512" class="button--panel__icon button--panel__icon--cmd"><use xlink:href="images/icons-cmd.svg#icon-burger"></use></svg>
+      <span class="button--panel__text">menu</span>
+    </a>
+
+    <a id="link-settings" href="settings.html" class="button--panel" aria-label="toon de toegankelijkheidsinstellingen" data-panel-name="tabpanel-settings">
+      <svg viewBox="0 0 51 51" class="button--panel__icon"><use xlink:href="images/logo-a11y.svg#logo-a11y"></use></svg>
+      <span class="button--panel__text">settings</span>
+    </a>
+
+  </header>
+
+
+
+  <aside inert data-current="none">
+
+    <div id="tablist" role="tablist" aria-label="het menu en de toegankelijkheidsinstellingen">
+
+      <button
+        type="button"
+
+        id="tab-menu"
+        role="tab"
+        aria-selected="false"
+        tabindex="-1"
+
+        aria-controls="tabpanel-menu"
+        aria-label="toon het menu"    
+        data-panel-name="tabpanel-menu"    
+        
+        class="button--panel">
+        
+        <svg viewBox="0 0 512 512" class="button--panel__icon button--panel__icon--cmd"><use xlink:href="images/icons-cmd.svg#icon-burger"></use></svg>
+        <span class="button--panel__text">menu</span>
+      </button>
+
+      <button
+        type="button"
+
+        id="tab-settings"
+        role="tab"
+        aria-selected="false"
+        tabindex="-1"
+
+        aria-controls="tabpanel-settings"
+        aria-label="toon de toegankelijkheidsinstellingen"     
+        data-panel-name="tabpanel-settings"   
+        
+        class="button--panel">
+
+        <svg viewBox="0 0 51 51" class="button--panel__icon"><use xlink:href="images/logo-a11y.svg#logo-a11y"></use></svg>
+        <span class="button--panel__text">settings</span>
+      </button>
+
+      <button
+        type="button"
+
+        id="tab-close"
+        role="tab"
+        aria-selected="false"
+        tabindex="-1"
+
+        class="button--panel">
+
+        <svg viewBox="0 0 512 512" class="button--panel__icon button--panel__icon--cmd"><use xlink:href="images/icons-cmd.svg#icon-pencils"></use></svg>
+        <span class="button--panel__text">sluiten</span>
+      </button>
+
+    </div>
+
+    
+
+    <section 
+      id="tabpanel-menu" 
+      role="tabpanel"
+      aria-labelledby="tab-menu"
+
+      hidden
+      inert
+      tabindex="0"
+      
+      class="tabpanel">
+
+      <div class="tabpanel__fade">
+        <div class="tabpanel__wrapper">
+          <nav class="list--links nav--main">
+            <a href="#" class="link--icon" lang="en">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-unicorn"></use></svg>
+              Homepage
+            </a>
+            <a href="#" class="link--icon">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-robot"></use></svg>
+              Voorwoord
+            </a>
+            <a href="#" class="link--icon link--icon--two-lines">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-twig"></use></svg>
+              <em>Standaard&nbsp;1</em> Beoogde leerresultaten
+            </a>
+            <a href="#" class="link--icon link--icon--two-lines">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-tape"></use></svg>
+              <em>Standaard 2</em> Onderwijs&shy;leeromgeving
+            </a>
+            <a href="#" class="link--icon link--icon--two-lines">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-speech"></use></svg>
+              <em>Standaard 3</em> Toetsing
+            </a>
+            <a href="#" class="link--icon link--icon--two-lines">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-trophee"></use></svg>
+              <em>Standaard 4</em> Gerealiseerde leerresultaten
+            </a>
+            <a href="#" class="link--icon">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-braid"></use></svg>
+              Studenten over hun opleiding
+            </a>
+          </nav>
+
+          <nav class="list--links nav--additional">
+            <a href="#" class="link--icon">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-enter"></use></svg>
+              CMD in cijfers
+            </a>
+            <a href="#" class="link--icon">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-route"></use></svg>
+              Bijlagen
+            </a>
+            <a href="#" class="link--icon">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-pen"></use></svg>
+              Colofon
+            </a>
+          </nav>
+
+          <nav class="list--links list--links--socials nav--socials">   
+            <a href="https://cmd-amsterdam.nl/" class="link--icon">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-kitten"></use></svg>
+              cmd-amsterdam.nl
+            </a>
+
+            <ul>
+              <li>
+                <a href="https://x.com/CMDAmsterdam" class="link--social">
+                  <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-x"></use></svg>
+                </a>  
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/groups/5051295/" class="link--social">
+                  <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-linkedin"></use></svg>
+                </a>  
+              </li>
+              <li>
+                <a href="https://www.facebook.com/people/CMD-Amsterdam/100068761906004/" class="link--social">
+                  <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-facebook"></use></svg>
+                </a>  
+              </li>
+              <li>
+                <a href="https://vimeo.com/cmdamsterdam" class="link--social">
+                  <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-vimeo"></use></svg>
+                </a> 
+              </li>
+              <li>
+                <a href="https://www.instagram.com/cmdamsterdam/" class="link--social">
+                  <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-instagram"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section 
+      id="tabpanel-settings" 
+      role="tabpanel"
+      aria-labelledby="tab-settings"
+
+      hidden
+      inert
+      tabindex="0"
+      
+      class="tabpanel">
+
+      <div class="tabpanel__fade">
+        <div class="tabpanel__wrapper">
+
+          <details open>
+            <summary>Toegankelijkheid</summary>
+
+            <fieldset>
+              <legend>kleuren</legend>
+              <label><input type="radio">systeem</label>
+              <label><input type="radio">licht</label>
+              <label><input type="radio">donker</label>
+            </fieldset>
+          </details>
+
+          <details open>
+            <summary>Ervaar het zelf</summary>
+
+            <fieldset>
+              <legend>leesbril vergeten</legend>
+              <label class="range-setting" data-icon-start="🏞️" data-icon-end="🌁">
+                <input id="setting-readers" type="range" min="0" max="3" value="0" step=".5" list="datalist--setting-readers">
+                <datalist id="datalist--setting-readers">
+                  <option value="0.0"></option>
+                  <option value="0.5"></option>
+                  <option value="1.0"></option>
+                  <option value="1.5"></option>
+                  <option value="2.0"></option>
+                  <option value="2.5"></option>
+                  <option value="3.0"></option>
+                </datalist>
+              </label>
+            </fieldset>
+          </details>
+
+        </div>
+      </div>
+    </section>
+  </aside>
+
+
+
+  <main id="main">
+    <header>
+      <h1>
+        <span><strong>Standaard 1.</strong></span>
+        <!-- <span>&nbsp;</span> -->
+        <span>Beoogde</span>
+        <span>leerresultaten</span>
+      </h1>
+      
+      <p>De beoogde leerresultaten passen bij het niveau en de oriëntatie van de opleiding en zijn afgestemd op de verwachtingen van het beroepenveld, het vakgebied en op internationale eisen.</p>
+
+      <nav class="nav--breadcrumb">
+        <a href="">← CMD zelfevaluatie</a> 
+        <!-- → Standaard 1 -->
+      </nav>
+
+      <nav class="nav--local">
+        <p>op deze pagina</p>
+        <ul>
+          <li><a href="">Visie CMD Amsterdam</a></li>
+          <li><a href="">Beroeps- en competentieprofiel</a></li>
+          <li><a href="">Werkveld, maatschappij en internationalisering</a></li>
+          <li><a href="">Reflectie</a></li>
+          <li><a href="">Ambities</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    <section>
+      <h2>Visie CMD Amsterdam</h2>
+
+      <p>Amsterdam heeft de grootste creatieve industrie  van Nederland, met veel creatieve en digitale-ontwerpbedrijven en organisaties die digitale producten en diensten ontwerpen. Miljoenen mensen maken hier dagelijks gebruik van. CMD Amsterdam is een voltijds bacheloropleiding in digitaal interactief design en speelt een cruciale en unieke rol in deze sector. We leiden kritische ontwerpers op die digitale producten creëren voor een complexe samenleving en werken samen met bedrijven, non-profitorganisaties en (onderzoeks-)instellingen in de regio. Met het onderzoek dat studenten en docenten bij CMD doen naar thema’s, zoals duurzaamheid, toegankelijkheid, diversiteit en inclusie, die commercieel vaak (nog) niet interessant zijn, inspireren we het werkveld. </p>
+
+      <p>In 2023 hebben we onze visie vernieuwd om meer nadruk te leggen op een kritische houding. Hoewel onze studenten met AI-toepassingen o.a. sneller prototypes kunnen maken, blijft kennis van en ervaring met het ambacht belangrijk. Om duurzame, toegankelijke, met oog voor detail ontworpen en vanuit een maatschappelijk perspectief zinvolle producten te ontwerpen is zowel ambacht als een kritische houding belangrijk. Hierbij is het belangrijk te weten waar je als toekomstig ontwerper aan bij wil dragen, en hoe je verantwoord omgaat met technologie en nieuwe toepassingen. De visie hebben we samengevat in één zin met drie delen die verder uitgewerkt zijn (zie Afbeelding 1.1).</p>
+    </section>
+
+    <section>
+      <h2>Visie CMD Amsterdam</h2>
+
+      <p>Amsterdam heeft de grootste creatieve industrie  van Nederland, met veel creatieve en digitale-ontwerpbedrijven en organisaties die digitale producten en diensten ontwerpen. Miljoenen mensen maken hier dagelijks gebruik van. CMD Amsterdam is een voltijds bacheloropleiding in digitaal interactief design en speelt een cruciale en unieke rol in deze sector. We leiden kritische ontwerpers op die digitale producten creëren voor een complexe samenleving en werken samen met bedrijven, non-profitorganisaties en (onderzoeks-)instellingen in de regio. Met het onderzoek dat studenten en docenten bij CMD doen naar thema’s, zoals duurzaamheid, toegankelijkheid, diversiteit en inclusie, die commercieel vaak (nog) niet interessant zijn, inspireren we het werkveld. </p>
+
+      <p>In 2023 hebben we onze visie vernieuwd om meer nadruk te leggen op een kritische houding. Hoewel onze studenten met AI-toepassingen o.a. sneller prototypes kunnen maken, blijft kennis van en ervaring met het ambacht belangrijk. Om duurzame, toegankelijke, met oog voor detail ontworpen en vanuit een maatschappelijk perspectief zinvolle producten te ontwerpen is zowel ambacht als een kritische houding belangrijk. Hierbij is het belangrijk te weten waar je als toekomstig ontwerper aan bij wil dragen, en hoe je verantwoord omgaat met technologie en nieuwe toepassingen. De visie hebben we samengevat in één zin met drie delen die verder uitgewerkt zijn (zie Afbeelding 1.1).</p>
+    </section>
+
+    <section>
+      <h2>Visie CMD Amsterdam</h2>
+
+      <p>Amsterdam heeft de grootste creatieve industrie  van Nederland, met veel creatieve en digitale-ontwerpbedrijven en organisaties die digitale producten en diensten ontwerpen. Miljoenen mensen maken hier dagelijks gebruik van. CMD Amsterdam is een voltijds bacheloropleiding in digitaal interactief design en speelt een cruciale en unieke rol in deze sector. We leiden kritische ontwerpers op die digitale producten creëren voor een complexe samenleving en werken samen met bedrijven, non-profitorganisaties en (onderzoeks-)instellingen in de regio. Met het onderzoek dat studenten en docenten bij CMD doen naar thema’s, zoals duurzaamheid, toegankelijkheid, diversiteit en inclusie, die commercieel vaak (nog) niet interessant zijn, inspireren we het werkveld. </p>
+
+      <p>In 2023 hebben we onze visie vernieuwd om meer nadruk te leggen op een kritische houding. Hoewel onze studenten met AI-toepassingen o.a. sneller prototypes kunnen maken, blijft kennis van en ervaring met het ambacht belangrijk. Om duurzame, toegankelijke, met oog voor detail ontworpen en vanuit een maatschappelijk perspectief zinvolle producten te ontwerpen is zowel ambacht als een kritische houding belangrijk. Hierbij is het belangrijk te weten waar je als toekomstig ontwerper aan bij wil dragen, en hoe je verantwoord omgaat met technologie en nieuwe toepassingen. De visie hebben we samengevat in één zin met drie delen die verder uitgewerkt zijn (zie Afbeelding 1.1).</p>
+    </section>
+  </main>
+
+
+
+
+
+  <footer id="menu">
+    <div class="footer__wrapper">
+      <nav class="list--links nav--main">
+        <a href="#" class="link--icon" lang="en">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-unicorn"></use></svg>
+          Homepage
+        </a>
+        <a href="#" class="link--icon">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-robot"></use></svg>
+          Voorwoord
+        </a>
+        <a href="#" class="link--icon link--icon--two-lines">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-twig"></use></svg>
+          <em>Standaard&nbsp;1</em> Beoogde leerresultaten
+        </a>
+        <a href="#" class="link--icon link--icon--two-lines">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-tape"></use></svg>
+          <em>Standaard 2</em> Onderwijs&shy;leeromgeving
+        </a>
+        <a href="#" class="link--icon link--icon--two-lines">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-speech"></use></svg>
+          <em>Standaard 3</em> Toetsing
+        </a>
+        <a href="#" class="link--icon link--icon--two-lines">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-trophee"></use></svg>
+          <em>Standaard 4</em> Gerealiseerde leerresultaten
+        </a>
+        <a href="#" class="link--icon">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-braid"></use></svg>
+          Studenten over hun opleiding
+        </a>
+      </nav>
+
+      <nav class="list--links nav--additional">
+        <a href="#" class="link--icon">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-enter"></use></svg>
+          CMD in cijfers
+        </a>
+        <a href="#" class="link--icon">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-route"></use></svg>
+          Bijlagen
+        </a>
+        <a href="#" class="link--icon">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-pen"></use></svg>
+          Colofon
+        </a>
+      </nav>
+
+      <nav class="list--links list--links--socials nav--socials">   
+        <a href="https://cmd-amsterdam.nl/" class="link--icon">
+          <svg viewBox="0 0 512 512"><use xlink:href="images/icons-cmd.svg#icon-kitten"></use></svg>
+          cmd-amsterdam.nl
+        </a>
+
+        <ul>
+          <li>
+            <a href="https://x.com/CMDAmsterdam" class="link--social">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-x"></use></svg>
+            </a>  
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/groups/5051295/" class="link--social">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-linkedin"></use></svg>
+            </a>  
+          </li>
+          <li>
+            <a href="https://www.facebook.com/people/CMD-Amsterdam/100068761906004/" class="link--social">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-facebook"></use></svg>
+            </a>  
+          </li>
+          <li>
+            <a href="https://vimeo.com/cmdamsterdam" class="link--social">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-vimeo"></use></svg>
+            </a> 
+          </li>
+          <li>
+            <a href="https://www.instagram.com/cmdamsterdam/" class="link--social">
+              <svg viewBox="0 0 512 512"><use xlink:href="images/icons-socials.svg#icon-instagram"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <svg class="pay-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 229 24">
+        <title>Creating Tomorrow</title>
+        <use xlink:href="images/logo-creating-tomorrow.svg#logo-creating-tomorrow"></use>
+      </svg>
+    </div>
+  </footer>
+
+  <script defer src="scripts/helpers.js"></script>
+  <script defer src="scripts/aside.js"></script>
+
+  <script defer src="scripts/experience.js"></script>
+  
+</body>
+</html>
