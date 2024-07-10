@@ -30,8 +30,8 @@ main > header {
   /* border-bottom:solid 1px currentColor; */
   padding:calc(var(--gap) * 6) 0 1.5rem;
 
-  background-color: var(--yellow);
-  /* color:var(--light); */
+  background-color: var(--yellow--br);
+  color:var(--dark);
 }
 
 
