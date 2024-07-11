@@ -33,7 +33,7 @@ body > header::before {
     -webkit-mask-image:linear-gradient(#000 75%,#0009);
     mask-image:linear-gradient(#000 75%,#0009);
     backdrop-filter:
-      blur(.25em) 
+      blur(.33em) 
       grayscale(.75);
   }
 }

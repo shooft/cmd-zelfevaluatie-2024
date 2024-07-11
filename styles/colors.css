@@ -2,10 +2,22 @@
   --light:#fff;
   --light--t80:#fff9;
 
-  --dark:#504C4D;
-  --dark--t80:#504C4D99;
+  --grey--8:hsl(345 3% 8%);
+  --grey--8--t80:hsl(345 3% 8% / .8);
+  
+  --grey--16:hsl(345 3% 16%);
+  --grey--16--t80:hsl(345 3% 16% / .8);
+  
+  --grey--24:hsl(345 3% 24%);
+  --grey--24--t80:hsl(345 3% 24% / .8);
 
-  --yellow:#FEE502;
+  --grey--32:hsl(345 3% 32%);
+  --grey--32--t80:hsl(345 3% 32% / .8);
+
+  --yellow--cmd:#FFF021;
+  --blue--cmd:#011BFD;
+
+  --yellow:#FFF021;
   --orange:#FDDB9E;
   --pink:#F8A1BB;
   --green:#BDE4B6;
@@ -13,8 +25,7 @@
   --purple:#DEB8E0;
   --turquoise:#B9E7DF;
 
-  --yellow--inv:#011BFD;
-  --yellow--br:#FEE502;
+  --yellow--br:#FFF021;
   --orange--br:#F9BC4E;
   --pink--br:#F35A8E;
   --green--br:#6CC670;
@@ -23,20 +34,28 @@
   --turquoise--br:#57C5BE;
 
   --bg-root:var(--light);
-  --clr-root:var(--dark);
+  --clr-root:var(--grey--24);
 
-  --clr-link:var(--yellow--inv);
-  --outline-link:var(--yellow--inv);
+  --clr-link:var(--blue--cmd);
+  --outline-link:var(--blue--cmd);
+
+  --clr-link-hero:var(--blue--cmd);
+  --outline-link-hero:var(--blue-cmd);
 
   --bg-header:var(--light);
   --bg-header-gradient:linear-gradient(var(--light) 25%, var(--light--t80));
 
   --bg-button--panel:var(--light);
-  --clr-button--panel:var(--dark);
-  --brdr-button--panel:var(--dark);
+  --clr-button--panel:var(--grey--24);
+  --brdr-button--panel:var(--grey--24);
 
-  --bg-tab-selected:var(--dark);
+  --bg-tab-selected:var(--grey--24);
   --clr-tab-selected:var(--light);
+
+  --bg-h1:var(--yellow--cmd);
+  --clr-h1:var(--grey--24);
+  --bg-h1__strong:var(--grey--24);
+  --clr-h1__strong:var(--light);
 
   color-scheme:light;
   accent-color:var(--yellow--inv);
@@ -52,21 +71,28 @@
     --purple:#8E5884;
     --turquoise:#669590;
 
-    --bg-root:var(--dark);
+    --bg-root:var(--grey--32);
     --clr-root:var(--light);
 
     --clr-link:var(--yellow--br);
     --outline-link:var(--yellow--br);
 
-    --bg-header:var(--dark);
-    --bg-header-gradient:linear-gradient(var(--dark) 25%, var(--dark--t80));
+    --clr-link:var(--yellow--br);
+    --outline-link:var(--yellow--br);
+
+    --bg-header:var(--grey--32);
+    --bg-header-gradient:linear-gradient(var(--grey--32) 25%, var(--grey--32--t80));
 
     --bg-button--panel:var(--dark);
     --clr-button--panel:var(--light);
     --brdr-button--panel:var(--light);
 
     --bg-tab-selected:var(--light);
-    --clr-tab-selected:var(--dark);
+    --clr-tab-selected:var(--grey--8);
+
+    --clr-h1:var(--grey--8);
+    --bg-h1__strong:var(--light);
+    --clr-h1__strong:var(--grey--8);
 
     color-scheme:dark;
     accent-color:var(--yellow--br);

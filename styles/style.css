@@ -7,6 +7,7 @@
   font-family:open-sans-var, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-smooth: auto;
+  font-variant-numeric: oldstyle-nums;
 }
 
 
@@ -48,7 +49,7 @@ body{
   margin:0;
 }
 
-p, li {
+h2, p, li {
   line-height: 1.6;
   text-wrap:pretty;
 }
@@ -72,10 +73,6 @@ button, input, text-area {
 button:not([disabled], [inert]) {
   cursor:pointer;
 }
-
-/* button:focus-visible {
-  outline:solid .1em var(--outline-link);
-} */
 
 a {
   color:var(--clr-link);
@@ -115,6 +112,8 @@ a:focus-visible {
 /*******************/
 
 .button--panel { 
+  --size-button-header:2.25em;
+
   min-width:var(--size-button-header);
   min-height:var(--size-button-header);
   padding:0;
@@ -136,7 +135,6 @@ a:focus-visible {
 
 .button--panel__text {
   font-size:8px;
-  /* line-height:100%; */
 }
 
 .button--panel__icon {
@@ -154,7 +152,7 @@ a:focus-visible {
   }
 
   .button--panel__text {
-    font-size:10px;
+    font-size:9px;
   }
 }
 
@@ -303,35 +301,14 @@ body {
     var(--large) [large-end]
     var(--full) [full-end]; */
 
-  
-  grid-template-columns:
-    [full-start] minmax(var(--gap), 1fr)
-    [large-start medium-start small-start] min(40rem, 100% - var(--gap) * 2) [small-end  medium-end large-end]
-    minmax(var(--gap), 1fr) [full-end];
-  align-content:start;
-}
-
-@media (width > 70em) {
-  body {
     grid-template-columns:
       [full-start] minmax(var(--gap), 1fr)
-      [large-start medium-start small-start] min(40rem, 100% - var(--gap) * 2) [small-end]
+      [large-start medium-start small-start] var(--gap)
+      [inset-start] min(40rem, 100% - var(--gap) * 3) [small-end]
       minmax(0, var(--gap))
-      [side-start] minmax(0, 12rem) [medium-end large-end side-end]
-      minmax(var(--gap), 1fr) [full-end];
-  }
-}
-
-@media (width > 80em) {
-  body {
-    grid-template-columns:
-      [full-start] minmax(var(--gap), 1fr)
-      [large-start medium-start small-start] min(40rem, 100% - var(--gap) * 2) [small-end]
-      minmax(0, var(--gap))
-      [side-start] minmax(0, 6rem) [medium-end] 
+      [side-start] minmax(0, 6rem) [inset-end medium-end] 
       minmax(0, 6rem) [large-end side-end]
       minmax(var(--gap), 1fr) [full-end];
-  }
 }
 
 
