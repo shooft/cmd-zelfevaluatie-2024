@@ -56,6 +56,8 @@
   --clr-h1:var(--grey--24);
   --bg-h1__strong:var(--grey--24);
   --clr-h1__strong:var(--light);
+  --bg-h1__handle:var(--light);
+  --brdr-h1__handle:var(--grey--24);
 
   color-scheme:light;
   accent-color:var(--yellow--inv);
@@ -93,6 +95,7 @@
     --clr-h1:var(--grey--8);
     --bg-h1__strong:var(--light);
     --clr-h1__strong:var(--grey--8);
+    --brdr-h1__handle:var(--grey--8);
 
     color-scheme:dark;
     accent-color:var(--yellow--br);
