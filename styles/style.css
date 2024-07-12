@@ -49,7 +49,7 @@ body{
   margin:0;
 }
 
-h2, p, li {
+h2, p, li, summary {
   line-height: 1.6;
   text-wrap:pretty;
 }

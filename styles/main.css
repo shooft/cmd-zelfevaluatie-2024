@@ -138,14 +138,64 @@ main > header .nav--breadcrumb {
 }
 
 main > header .nav--breadcrumb a {
+  display:inline-grid;
+  grid-template-columns:1.25em 1fr;
+  align-items:center;
+  gap:.25em;
+
+  color:var(--color-breadcrumb);
   text-decoration-line:none;
 }
 
-main > header .nav--breadcrumb a:hover {
-  text-decoration-line: underline;
+main > header .nav--breadcrumb a span {
+  position:relative;
+  justify-self:end;
+  
+  display:block;
+  width:1em;
+  height:max(.075em, 1px);
+
+  background-color:currentColor;
+
+  border-radius:1em 0 0 1em;
+
+  transition:width .2s;
 }
 
+main > header .nav--breadcrumb a span:before,
+main > header .nav--breadcrumb a span:after  {
+  content:"";
 
+  position:absolute;
+  height:100%;
+  width:.7em;
+
+  border-radius:inherit;
+  background-color:inherit;
+
+  transition:inherit;
+
+  transform-origin:max(.0375em, .5px) 50%;
+}
+
+main > header .nav--breadcrumb a span:before {
+  transform:rotate(45deg);
+}
+main > header .nav--breadcrumb a span:after {
+  transform:rotate(-45deg);
+}
+
+main > header .nav--breadcrumb a:hover span,
+main > header .nav--breadcrumb a:focus-visible span {
+  width:1.25em;
+}
+
+main > header .nav--breadcrumb a:hover span:before,
+main > header .nav--breadcrumb a:hover span:after,
+main > header .nav--breadcrumb a:focus-visible span:before,
+main > header .nav--breadcrumb a:focus-visible span:after   {
+  width:.4em;
+}
 
 
 
