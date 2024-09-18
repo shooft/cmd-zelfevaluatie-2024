@@ -56,11 +56,11 @@ function iniDistraction() {
     "turquoise"
   ]
   
-  const soundPop = new Audio("../sounds/pop.m4a");
-  const soundSqueaky = new Audio("../sounds/squeaky.m4a");
-  // const soundGrunt = new Audio("../sounds/grunt.m4a");
-  const soundWiehieuw = new Audio("../sounds/wiehieuw.m4a");
-  const soundRelief = new Audio("../sounds/relief.m4a");
+  const soundPop = new Audio("./sounds/pop.m4a");
+  const soundSqueaky = new Audio("./sounds/squeaky.m4a");
+  // const soundGrunt = new Audio("./sounds/grunt.m4a");
+  const soundWiehieuw = new Audio("./sounds/wiehieuw.m4a");
+  const soundRelief = new Audio("./sounds/relief.m4a");
   
   
 
