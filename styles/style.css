@@ -2,24 +2,68 @@
 /* REMEDY */
 /**********/
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing:border-box;
-  font-family:open-sans-var, Arial, sans-serif;
+
+  font-family:'Open Sans Var', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-smooth: auto;
   font-variant-numeric: oldstyle-nums;
+
+  letter-spacing: calc(.01em * var(--setting--whitespace, 0));
+  word-spacing: calc(.03em * var(--setting--whitespace, 0));
+}
+
+:root[data-font-family="Dyslexie"] *,
+:root[data-font-family="Dyslexie"] *::before,
+:root[data-font-family="Dyslexie"] *::after {
+  font-family:'Dyslexie', Arial, sans-serif;
+  font-size-adjust: .50;
+}
+
+:root[data-font-family="OpenDyslexic"] *,
+:root[data-font-family="OpenDyslexic"] *::before,
+:root[data-font-family="OpenDyslexic"] *::after {
+  font-family:'Open Dyslexic', Arial, sans-serif;
+  font-size-adjust: .5;
+}
+
+:root[data-font-family="ComicSans"] *,
+:root[data-font-family="ComicSans"] *::before,
+:root[data-font-family="ComicSans"] *::after {
+  font-family:'Comic Sans MS', Arial, sans-serif;
 }
 
 
 
 
 
-/**************/
-/* CUST PROPS */
-/**************/
+/**********/
+/* TOKENS */
+/**********/
 
+:root {
+  font-size:calc(
+    clamp( 1em, 2.5vmin, 1.25em) * 
+    (1 + .1 * var(--setting--font-size, 0)) *
+    var(--font-size-adjust, 1)
+  );
 
+  --gap: clamp(1rem, 4vw, 2rem);
+  --size-button:2.25em;
 
+  --header-min-height:calc( var(--size-button) + max(2em, var(--gap)) );
+
+  --line-height-factor:calc(1 + var(--setting--whitespace, 0) * .05);
+}
+
+@media (width > 23em) {
+  :root {
+    --size-button:2.5em;
+  }
+}
 
 
 
@@ -28,29 +72,28 @@
 /* BASICS */
 /**********/
 
-html {
+body {
   color:var(--clr-root);
-  background-color:var(--bg-root);
-
-  font-size:clamp(
-    1em,
-    2.5vmin,
-    1.25em
-  );
+  background-color:var(--bg-root);  
 }
 
-@media (prefers-reduced-motion:no-preference) {
-  html {
-    scroll-behavior:smooth;
-  }
+html[data-reduced-motion="no-preference"] {
+  scroll-behavior:smooth;
 }
 
 body{
   margin:0;
 }
 
-h2, p, li, summary {
-  line-height: 1.6;
+h2,
+p,
+li,
+summary,
+legend,
+.radio-setting,
+.check-setting,
+.range-setting {
+  line-height: calc(1.6 * var(--line-height-factor));
   text-wrap:pretty;
 }
 
@@ -80,12 +123,14 @@ a {
   text-underline-offset:.15em;
   text-decoration-thickness:.07em;
 
+  
   outline-offset:.125em;
-  border-radius:.125em;
+  /* border-radius:.125em; */
 }
 
 a:focus-visible {
   text-decoration:none;
+  outline:solid .1rem var(--accent-color);
 }
 
 .visually-hidden:not(:focus):not(:active) {
@@ -102,216 +147,19 @@ a:focus-visible {
 
 
 
-/**************/
-/* COMPONENTS */
-/**************/
-
-
-/*******************/
-/* BUTTONS → PANEL */
-/*******************/
-
-.button--panel { 
-  --size-button-header:2.25em;
-
-  min-width:var(--size-button-header);
-  min-height:var(--size-button-header);
-  padding:0;
-
-  -webkit-appearance:none;
-  appearance:none;
-  color:var(--clr-button--panel);
-  background-color:var(--bg-button--panel);
-  border:solid 1px var(--brdr-button--panel);
-  border-radius:.25em;
-
-  text-decoration:none;
-  outline-offset:0;
-
-  display:grid;
-  grid-template-rows:1fr min-content;
-  place-items:center;
-}
-
-.button--panel__text {
-  font-size:8px;
-}
-
-.button--panel__icon {
-  height:1.25em;
-  aspect-ratio: 1;
-}
-
-.button--panel__icon--cmd {
-  height:1.33em;
-}
-
-@media (width > 23em) {
-  :root {
-    --size-button-header:2.5em;
-  }
-
-  .button--panel__text {
-    font-size:9px;
-  }
-}
-
-@media (width > 32em) {
-  .button--panel {
-    display: flex;
-    gap:.25em;
-    justify-content:center;
-    padding:0 .5em;
-  }
-  
-  .button--panel__icon {
-    flex-shrink:0;
-  }
-
-  .button--panel__text {
-    font-size:1em;
-  }
-}
-
-
-/*************/
-/* skip link */
-/*************/
-
-.link--skip {
-  position: absolute;
-  top:100%;
-  left:var(--gap);
-  background-color:var(--bg-root);
-  box-shadow:0 0 0 .125em var(--bg-root);
-}
-
-
-/**************/
-/* link lists */
-/**************/
-
-.list--links {
-  display:grid;
-  gap:1.25em;
-}
-
-.list--links--socials ul {
-  margin:0;
-  padding:0;
-  list-style-type:"";
-
-  display:flex;
-}
-
-/* links - icon */
-.link--icon {
-  justify-self:start;
-  min-height:2.5em;
-  padding-right:.5em;
-
-  display:grid;
-  grid-template-columns: max-content 1fr;
-  column-gap:.5em;
-  align-items:center;
-  
-  text-decoration-line:none;
-  color:var(--clr-root);
-  text-wrap: balance;
-}
-
-.link--icon svg {
-  display:block;
-  width:2.25em;
-  aspect-ratio:1; 
-  align-self: center;
-}
-
-.link--icon--two-lines {
-  align-items:start;
-}
-
-.link--icon--two-lines svg {
-  grid-row:span 2;
-}
-
-.link--icon em {
-  font-weight:300;
-  align-self:end;
-}
-
-.link--icon:hover {
-  text-decoration-line:underline;
-}
-
-/* links - social */
-.link--social {
-  display:grid;
-  place-items:center;
-  width:2.5em;
-  aspect-ratio:1;
-  color:var(--clr-root);
-}
-
-.link--social svg {
-  display:block;
-  width:1.25em;
-  aspect-ratio:1;
-}
-
-
-
-
-
-
-
-
-
-
-
 /********/
 /* GRID */
 /********/
 
-:root {
-  --gap: clamp(1rem, 4vw, 2rem);
-  /* --full: minmax(var(--gap), 1fr); */
-  /* --large: minmax(0, 6rem); */
-  /* --medium: minmax(0, 4rem); */
-  /* --space: minmax(0, var(--gap)); */
-  /* --small: min(40rem, 100% - var(--gap) * 2); */
-
-  /* --size-button-header:2.25em; */
-
-  /* --full: minmax(var(--gap), 1fr); */
-}
-
-
-
 body {
   display: grid;
-  /* grid-template-columns:
-    [full-start] var(--full)
-    [large-start] var(--large)
-    [medium-start] var(--medium)
-    [space-start] var(--space)
-    [small-start] var(--small) [small-end]
-    var(--space) [space-end]
-    var(--medium) [medium-end]
-    var(--large) [large-end]
-    var(--full) [full-end]; */
 
-    grid-template-columns:
-      [full-start] minmax(var(--gap), 1fr)
-      [large-start medium-start small-start] var(--gap)
-      [inset-start] min(40rem, 100% - var(--gap) * 3) [small-end]
-      minmax(0, var(--gap))
-      [side-start] minmax(0, 6rem) [inset-end medium-end] 
-      minmax(0, 6rem) [large-end side-end]
-      minmax(var(--gap), 1fr) [full-end];
+  grid-template-columns:
+    [full-start] minmax(var(--gap), 1fr)
+    [large-start medium-start small-start] var(--gap)
+    [inset-start] min(40rem, 100% - var(--gap) * 3) [small-end]
+    minmax(0, var(--gap))
+    [side-start] minmax(0, 6rem) [inset-end medium-end] 
+    minmax(0, 6rem) [large-end side-end]
+    minmax(var(--gap), 1fr) [full-end];
 }
-
-
-
-
-

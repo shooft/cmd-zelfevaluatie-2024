@@ -1,0 +1,162 @@
+/*************/
+/* NAV EXTRA */
+/*************/
+
+.nav--extra {
+  container-type:inline-size;
+  container-name:nav--extra;
+
+  position: absolute;
+  z-index:30;
+
+  width:100%;
+  min-height:var(--header-min-height);
+  padding:0 0 0 var(--gap);
+
+  display:flex;
+  align-items:center;
+
+  pointer-events:none;
+}
+
+.link--logo {
+  display:block;
+  color:var(--clr-root);
+  pointer-events:all;
+}
+
+/* cmd logo */
+.link--cmd {
+  position: relative;
+
+  margin-left:1em;
+
+  display:grid;
+  align-content:center;
+  text-decoration-line:none;
+  
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height:1.2;
+}
+
+.link--cmd span {
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height:1.2;
+}
+
+.link--cmd:hover {
+  text-decoration-line: underline;
+}
+
+/* streepje */
+.link--cmd::before {
+  content:"";
+  position:absolute;
+  width:1px;
+  height:100%;
+  left:-.5em;
+  background-color:currentColor;
+}
+
+/* hva logo */
+.link--hva svg{
+  height:2em;
+}
+
+.logo--hva-icon {
+  display:block;
+}
+
+.logo--hva-small {
+  display:none;
+}
+
+.logo--hva-wide {
+  display:none;
+}
+
+/* RESPONSIVENESS */
+
+/* no room for CMD */
+@container nav--extra (width < 20em) {
+  .link--cmd {
+    display:flex;
+    align-items:center;
+  }
+  
+  .link--cmd > span {
+    display:flex;
+  }
+
+  .link__extra-text {
+    position:absolute;
+    left:-9999em;
+  }
+}
+
+/* breathing room */
+@container nav--extra (width > 23em) {
+  .link--cmd {
+   margin-left:1.5em;
+  }
+
+  /* streepje */
+  .link--cmd::before {
+    left:-.75em;
+  }
+
+
+  /* hva logo */
+  .link--hva svg {
+    height:2.5em;
+  }
+}
+
+
+/* full size logo */
+@container nav--extra (width > 52em) {
+  .link--cmd {
+    margin-left:2em;
+   }
+ 
+   /* streepje */
+   .link--cmd::before {
+     left:-1em;
+   }
+   
+   /* hva logo */
+  .logo--hva-icon {
+    display:none;
+  }
+  
+  .logo--hva-small {
+    display:block;
+    visibility:visible;
+  }
+}
+
+/* wide logo */
+@container nav--extra (width > 76em) {
+  /* streepje */
+  .nav__dash {
+    height:1.25em;
+    align-self:center;
+  }
+
+  /* cmd logo */
+  .link--cmd {
+    display:block;
+  }
+  
+  /* hva logo */
+  .logo--hva-small {
+    display:none;
+  }
+
+  .logo--hva-wide {
+    display:block;
+    visibility:visible;
+  }
+}

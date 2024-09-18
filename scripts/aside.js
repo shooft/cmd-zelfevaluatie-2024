@@ -12,12 +12,21 @@ const tabClose = $('#tab-close');
 const tabpanelMenu = $('#tabpanel-menu');
 const tabpanelSettings = $('#tabpanel-settings');
 
+const asideFog = $('.aside__fog');
+
 
 // LOGIC
 function openAside() {
   aside.removeAttribute("inert");
   linkMenu.setAttribute("inert", "");
   linkSettings.setAttribute("inert", "");
+
+  // disable rest of the site
+  navExtra.setAttribute("inert", "");
+  header.setAttribute("inert", "");
+  navBreadcrumb.setAttribute("inert", "");
+  main.setAttribute("inert", "");
+  footer.setAttribute("inert", "");
 }
 
 function closeAside() {
@@ -26,6 +35,13 @@ function closeAside() {
 
   linkMenu.removeAttribute("inert");
   linkSettings.removeAttribute("inert");
+
+  // enable rest of the site
+  navExtra.removeAttribute("inert");
+  header.removeAttribute("inert");
+  navBreadcrumb.removeAttribute("inert");
+  main.removeAttribute("inert");
+  footer.removeAttribute("inert");
 }
 
 function openTab(tab) {
@@ -158,3 +174,5 @@ tabSettings.addEventListener("click", toSettings);
 
 tabClose.addEventListener("click", closeNavSettings);
 tabClose.addEventListener("blur", blurTabClose);
+
+asideFog.addEventListener("click", closeNavSettings);

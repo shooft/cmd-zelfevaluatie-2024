@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="daark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="styles/colors.css">
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <link rel="stylesheet" href="styles/distraction.css">
+</head>
+<body id="settings-experience">
+  
+  <!-- https://www.flaticon.com/packs/unicorn-58 -->
+
+  <label class="range-setting" data-icon-start="🎁" data-icon-end="🎊">
+    <span>Afleidende afleiding</span>
+    <input name="distraction" type="range" min="0" max="4" value="0" step="1" list="datalist--distraction">
+    <datalist id="datalist--distraction">
+      <option value="0">niet</option>
+      <option value="1">oei</option>
+      <option value="2">lastig</option>
+      <option value="3">bizar</option>
+      <option value="4">mesjogge</option>
+    </datalist>
+  </label>
+  
+
+  <script defer src="scripts/distraction.js"></script>
+</body>
+</html>

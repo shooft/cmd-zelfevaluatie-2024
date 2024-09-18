@@ -1,6 +1,6 @@
-////////////
-// HELPERS
-////////////
+////////////////////
+// QUERY SELECTOR //
+////////////////////
 
 function $(element, context = document) {
 	return context.querySelector(element);
@@ -11,10 +11,13 @@ function $$(elements, context = document) {
 }
 
 
-function createEl (element) {
+//////////////
+// ELEMENTS //
+//////////////
+
+function createEl(element) {
 	return document.createElement(element);
 }
-
 
 function disable(element) {
 	element.disabled = true;
@@ -25,6 +28,10 @@ function enable(element) {
 }
 
 
+///////////
+// SOUND //
+///////////
+
 function playSound(sound) {
 	sound.play();
 }
@@ -34,6 +41,10 @@ function stopSound(sound) {
 	sound.currentTime = 0;
 }
 
+
+//////////
+// MATH //
+//////////
 
 function max(a, b) {
 	if (a > b) {
@@ -61,6 +72,14 @@ function clamp(min, target, max) {
 	}
 }
 
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+///////////////
+// CUST PROP //
+///////////////
 
 function setCustProp(property, value, element = document.documentElement) {
 	element.style.setProperty(property, value);
@@ -73,10 +92,18 @@ function setCustProps(propValuePairs, element = document.documentElement) {
 }
 
 
+////////////////
+// ATTRIBUTES //
+////////////////
+
 function setAttr(attribute, value, element = document.documentElement) {
 	element.setAttribute(attribute, value);
 }
 
+
+///////////////////
+// LOCAL STORAGE //
+///////////////////
 
 function storeItem(item, value) {
 	localStorage.setItem(item, value);	

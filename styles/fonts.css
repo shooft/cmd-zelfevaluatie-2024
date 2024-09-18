@@ -1,5 +1,6 @@
+/* OPEN SANS */
 @font-face {
-  font-family: 'open-sans-var';
+  font-family: 'Open Sans Var';
 	font-weight:300..800;
 	font-stretch:75..100;
 	font-style: normal;
@@ -10,12 +11,97 @@
 }
 
 @font-face {
-  font-family: 'open-sans-var';
+  font-family: 'Open Sans Var';
 	font-weight:300..800;
 	font-stretch:75..100;
 	font-style: italic;
   src:
     url("../fonts/OpenSans-Italic-var.woff2") format('woff2'),
     url("../fonts/OpenSans-Italic-var.ttf") format('truetype');
+	font-display: fallback;
+}
+
+
+
+
+
+/* COMIC SANS */
+@font-face {
+  font-family: 'Comic Sans MS';
+	font-weight:400;
+	font-style: normal;
+  src: 
+    local("Comic Sans MS"),
+    url("../fonts/ComicSansMS.woff2") format('woff2'),
+    url("../fonts/ComicSansMS.ttf") format('truetype');
+	font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Comic Sans MS';
+	font-weight:700;
+	font-style: normal;
+  src:
+    local("Comic Sans MS Bold"),
+    url("../fonts/ComicSansMS-Bold.woff2") format('woff2'),
+    url("../fonts/ComicSansMS-Bold.ttf") format('truetype');
+	font-display: fallback;
+}
+
+
+
+
+
+/* DYSLEXIE */
+@font-face {
+  font-family: 'Dyslexie';
+  src: 
+    url("../fonts/Dyslexie.woff2") format('woff2'),
+    url("../fonts/Dyslexie.ttf") format('truetype');
+	font-display: fallback;
+}
+
+
+
+
+
+/* OPEN DYSLEXIC */
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-weight:400;
+	font-style: normal;
+  src: 
+    url("../fonts/OpenDyslexic-Regular.woff2") format('woff2'),
+    url("../fonts/OpenDyslexic-Regular.otf") format('opentype');
+	font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-weight:400;
+	font-style: italic;
+  src: 
+    url("../fonts/OpenDyslexic-Italic.woff2") format('woff2'),
+    url("../fonts/OpenDyslexic-Italic.otf") format('opentype');
+	font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-weight:700;
+	font-style: normal;
+  src: 
+    url("../fonts/OpenDyslexic-Bold.woff2") format('woff2'),
+    url("../fonts/OpenDyslexic-Bold.otf") format('opentype');
+	font-display: fallback;
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  font-weight:700;
+	font-style: italic;
+  src: 
+    url("../fonts/OpenDyslexic-Bold-Italic.woff2") format('woff2'),
+    url("../fonts/OpenDyslexic-Bold-Italic.otf") format('opentype');
 	font-display: fallback;
 }

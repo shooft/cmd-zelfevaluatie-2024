@@ -1,0 +1,168 @@
+aside details {
+  display:grid;
+  gap:calc(.5em * var(--line-height-factor));
+}
+
+aside summary {
+  font-weight:700;
+  font-size:clamp(1.1em, 3vw, 1.2em);
+  font-size: clamp(1.1em, 4vw, 1.4em);
+}
+
+aside summary:focus-visible {
+  outline:solid .1rem var(--accent-color);
+  outline-offset:.2rem;
+}
+
+aside details .tabpanel__content {
+  display:grid;
+  gap:calc(1.5em * var(--line-height-factor));
+}
+
+
+
+
+
+/************/
+/* FIELDSET */
+/************/
+
+aside fieldset {
+  margin:0;
+  padding:0;
+
+  display:grid;
+  justify-items:start;
+
+  border:none;
+}
+
+aside fieldset legend {
+  padding:0;
+}
+
+
+
+
+
+/*****************************/
+/* RADIO EN CHECKBOX SETTING */
+/*****************************/
+
+.radio-setting,
+.check-setting {
+  display:flex;
+  align-items:center;
+  gap:.25em;
+  padding:.05em .25em .05em 0;
+}
+
+.radio-setting input,
+.check-setting input {
+  margin:0;
+  order:-2;
+  font-size:1em;
+}
+
+/* .radio-setting::after,
+.check-setting::after {
+  content:attr(data-icon);
+  font-size:1.5em;;
+  order:-1;
+} */
+
+/* focus */
+.radio-setting:has( :focus-visible ),
+.check-setting:has( :focus-visible ) {
+  outline:solid .1rem var(--accent-color);
+  outline-offset:.2rem;
+}
+
+.radio-setting:has( :focus-visible ) input,
+.check-setting:has( :focus-visible ) input {
+  outline:none;
+}
+
+
+
+
+
+/***************************/
+/* RANGE en SELECT SETTING */
+/***************************/
+
+.range-setting,
+.select-setting {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.range-setting {
+  gap:0 .25em;
+}
+
+.select-setting {
+  gap:.25em;
+}
+
+.range-setting span,
+.select-setting span {
+  order:-1;
+  flex-basis:100%;
+}
+
+.range-setting::before {
+  font-size:1.5em;
+  content:attr(data-icon-start);
+}
+
+.range-setting::after {
+  font-size:1.5em;
+  content:attr(data-icon-end);
+}
+
+.range-setting input,
+.select-setting select {
+  width:0;
+  flex-grow:1;
+  z-index:1;
+  font-size:1em;
+  margin:0;
+  padding:.25em 0;
+}
+
+.range-setting input:focus-visible,
+.select-setting select:focus-visible {
+  outline:solid .1rem var(--accent-color);
+  outline-offset:.2rem;
+}
+
+
+
+
+
+
+
+/***********/
+/* FILTERS */
+/***********/
+
+html[data-colorblind="achromatopsia"] { --colorblind:url("#achromatopsia"); }
+
+html[data-colorblind="deuteranomaly"] { --colorblind:url("#deuteranomaly"); }
+html[data-colorblind="deuteranopia"] { --colorblind:url("#deuteranopia"); }
+
+html[data-colorblind="protanomaly"] { --colorblind:url("#protanomaly"); }
+html[data-colorblind="protanopia"] { --colorblind:url("#protanopia"); }
+
+html[data-colorblind="tritanomaly"] { --colorblind:url("#tritanomaly"); }
+html[data-colorblind="tritanopia"] { --colorblind:url("#tritanopia"); }
+
+html {
+  filter:
+    blur( calc( .1em * var(--setting--readers, 0) ) )
+    contrast( calc( 1 - var(--setting--contrast, 0) ) )
+    var(--colorblind, )
+    ;
+}

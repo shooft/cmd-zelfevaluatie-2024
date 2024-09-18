@@ -1,0 +1,173 @@
+/*****************/
+/* UNICORN WORLD */
+/*****************/
+
+div.distraction {
+  --size-unicorn:clamp(4em, 15vw, 6em);
+
+  position: fixed;
+  inset:0;
+  pointer-events:none;
+  overflow: hidden;
+  z-index: 60;
+}
+
+
+
+
+
+/***********/
+/* UNICORN */
+/***********/
+
+.unicorn {
+  position:fixed;
+  bottom:0;
+  left:100%;
+
+  width:var(--size-unicorn);
+  display:grid;
+
+  animation: --unicorn-move var(--time-unicorn) linear;
+}
+
+@keyframes --unicorn-move {
+  0% {
+    animation-timing-function: ease-out;
+  }
+  60%, 95% {
+    translate:-70vw;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    translate:calc( -100vw - var(--size-unicorn) );
+  }
+}
+
+.unicorn > * {
+  grid-area: 1/1;
+  display:block;
+  width:100%;
+}
+
+.unicorn .unicorn__eye {
+  animation: --unicorn-eye var(--time-unicorn) linear;
+}
+
+.unicorn .unicorn__squint {
+  animation: --unicorn-squint var(--time-unicorn) linear;
+}
+
+.unicorn .unicorn__mouth {
+  animation: --unicorn-mouth var(--time-unicorn) linear;
+}
+
+@keyframes --unicorn-eye {
+  0%, 59.9% {
+    display:block;
+    animation-timing-function: ease-out;
+  }
+  60%, 95% {
+    display:none;
+    animation-timing-function: ease-out;
+  }
+  95.1%, 100% {
+    display:block;
+  }
+}
+
+@keyframes --unicorn-squint {
+  0%, 59.9% {
+    display:none;
+    animation-timing-function: ease-out;
+  }
+  60%, 95% {
+    display:block;
+    animation-timing-function: ease-out;
+  }
+  95.1%, 100% {
+    display:none;
+  }
+}
+
+@keyframes --unicorn-mouth {
+  0%, 59.9% {
+    display:none;
+    animation-timing-function: ease-out;
+  }
+  60%, 95% {
+    display:none;
+    animation-timing-function: ease-out;
+  }
+  95.1%, 100% {
+    display:block;
+  }
+}
+
+
+
+
+
+/*****************/
+/* UNCORN BUBBLE */
+/*****************/
+
+.unicorn-bubble { --color: var(--yellow--br); }
+.unicorn-bubble.orange { --color: var(--orange--br); }
+.unicorn-bubble.pink { --color: var(--pink--br); }
+.unicorn-bubble.green { --color: var(--green--br); }
+.unicorn-bubble.blue { --color: var(--blue--br); }
+.unicorn-bubble.purple { --color: var(--purple--br); }
+.unicorn-bubble.turquoise { --color: var(--turquoise--br); }
+
+.unicorn-bubble {
+  --size-bubble:calc( var(--size-unicorn) * (.8 + .4 * var(--size)) * .05);
+
+  position:fixed;
+  left:calc( var(--x) * 100% - var(--size-bubble) * .5);
+  bottom:calc( var(--y) * 100% - var(--size-bubble) * .5);
+  z-index: 70;
+
+  width:var(--size-bubble);
+  aspect-ratio:1;
+  background-image:
+    radial-gradient(
+      at 40% 40% in oklch, 
+      #fff6, 
+      var(--color) 85%
+    );
+  background-image:
+    radial-gradient(
+      at 40% 40% in oklch, 
+      color-mix(in oklch, var(--color), transparent 75%), 
+      var(--color) 85%
+    );
+  border-radius:50%;
+
+  transition:
+    translate 5s cubic-bezier(.1, .7, .3, .9),
+    scale calc(15s + 15s * var(--timeY)) ease-in,
+    transform calc(15s + 15s * var(--timeY)) cubic-bezier(.1, .9, .1, .9),
+    opacity calc(15s + 15s * var(--timeY)) ease-in;
+
+    pointer-events:all;
+    cursor:pointer;
+}
+
+.unicorn-bubble.move {
+  scale:20;
+  
+  translate: calc(min(5vw, 2em) + min(25vw, 8em) * var(--poefX));
+
+  transform: 
+    translateY( calc(-2vh - 3vh * var(--deltaY) ) )
+    translateX( calc( (var(--deltaX) - .25) * 5vw ) );
+  opacity: .1;
+}
+
+.unicorn-bubble.move.poef {
+  width:calc(var(--size-bubble) * 5);
+  opacity:0;
+
+  transition:.1s;
+}
