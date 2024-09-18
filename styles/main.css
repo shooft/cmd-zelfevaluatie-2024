@@ -9,7 +9,6 @@ main {
 
   display:grid;
   grid-template-columns:inherit;
-  /* row-gap:3rem; */
 }
 
 
@@ -43,7 +42,7 @@ main > header h1 {
 
   font-size:clamp(2em, 11vw, 6em);
   
-  line-height:calc(1 * (1 + var(--setting--whitespace) * .05 ));
+  line-height:calc(1 * (1 + var(--setting--whitespace, 0) * .05 ));
   color:var(--clr-h1);
 
   display:grid;
@@ -55,7 +54,7 @@ main > header h1 {
 h1 > * {
   position: relative;
   
-  min-height:calc(1em * (1 + var(--setting--whitespace) * .05 ));
+  min-height:calc(1em * (1 + var(--setting--whitespace, 0) * .05 ));
   min-width:calc(var(--gap) * 3);
   padding:0 var(--gap);
 

@@ -12,15 +12,15 @@
   font-smooth: auto;
   font-variant-numeric: oldstyle-nums;
 
-  letter-spacing: calc(.01em * var(--setting--whitespace, 0));
-  word-spacing: calc(.03em * var(--setting--whitespace, 0));
+  letter-spacing: calc(.01em * var(--setting--whitespace));
+  word-spacing: calc(.03em * var(--setting--whitespace));
 }
 
 :root[data-font-family="Dyslexie"] *,
 :root[data-font-family="Dyslexie"] *::before,
 :root[data-font-family="Dyslexie"] *::after {
   font-family:'Dyslexie', Arial, sans-serif;
-  font-size-adjust: .50;
+  font-size-adjust: .5;
 }
 
 :root[data-font-family="OpenDyslexic"] *,
@@ -47,7 +47,7 @@
 :root {
   font-size:calc(
     clamp( 1em, 2.5vmin, 1.25em) * 
-    (1 + .1 * var(--setting--font-size, 0)) *
+    (1 + .1 * var(--setting--font-size)) *
     var(--font-size-adjust, 1)
   );
 
@@ -56,7 +56,7 @@
 
   --header-min-height:calc( var(--size-button) + max(2em, var(--gap)) );
 
-  --line-height-factor:calc(1 + var(--setting--whitespace, 0) * .05);
+  --line-height-factor:calc(1 + var(--setting--whitespace) * .05);
 }
 
 @media (width > 23em) {

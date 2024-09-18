@@ -196,12 +196,15 @@ const rangeSettingsAccessibility = $$('#settings-accessibility .range-setting in
 
 function iniRangeSettingAccessibility(rangeSetting) {
   const setting =  rangeSetting.name;
+  let value = rangeSetting.value;
 
   const storedValue = retrieveItem("--setting--"+setting);
   if(storedValue) {
-    rangeSetting.value = storedValue;
-    setCustProp("--setting--"+setting, storedValue);
+    value = storedValue;
   }
+
+  rangeSetting.value = storedValue;
+  setCustProp("--setting--"+setting, storedValue);
 }
 
 function updateSettingAccessibility(e) {

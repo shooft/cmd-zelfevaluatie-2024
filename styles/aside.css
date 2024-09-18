@@ -16,13 +16,6 @@ aside {
   overflow:hidden;
 }
 
-/* aside:not( [data-current="none"] ) {
-  background-color:var(--bg-aside);
-}
-
-:root[data-reduced-motion="no-preference"] aside:not( [data-current="none"] ) {
-  transition:.25s;
-} */
 
 
 
